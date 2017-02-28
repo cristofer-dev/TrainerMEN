@@ -33,9 +33,10 @@ app.get("/login",function(req,res) {
 })
 
 app.post("/users",function(req,res) {
-	console.log(req.body.email);
-	console.log(req.body.password);
-	res.send("User y Pass Recibidos");
+	var user = new User({email: req.body.email, password: req.body.password});
+	user.save(function(){
+		res.send("Guardar Datos Exitoso");
+	});
 })
 
 
