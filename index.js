@@ -36,7 +36,12 @@ app.post("/users",function(req,res) {
 	var user = new User({email: req.body.email, password: req.body.password});
 	user.save(function(){
 		res.send("Guardar Datos Exitoso");
+		User.find(function(err,doc){
+			console.log(doc);
+		});
 	});
+
+
 })
 
 
