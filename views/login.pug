@@ -1,0 +1,13 @@
+extends ./layout.pug
+block contenido
+	form(action="/users",method="POST")
+
+		div(class="form-group")
+			label(for="email") E-Mail
+			input(type="text", name="email", placeholder="EMail", id="email", class="form-control")
+
+		div
+			label(for="password") Clave
+			input(type="password", name="password", placeholder="password", id="password" class="form-control")
+
+		
